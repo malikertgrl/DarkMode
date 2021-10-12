@@ -4,7 +4,7 @@ export default {
         textStyle: {
             margin: 5,
             fontSize: 20,
-            color: "#f5f5",
+            color: "red",
             fontWeight: "bold"
         },
         imageStyle: {
@@ -15,6 +15,19 @@ export default {
             flex: 1,
             justifyContent: "center",
             alignItems: "center"
+        },
+        headerTextStyle: {
+            fontWeight: "bold",
+            padding: 10,
+            fontSize: 20,
+            color: "#fff",
+
+
+        },
+        headerViewStyle: {
+            backgroundColor: "red",
+            justifyContent: "center",
+            alignItems: "center",
         }
     }
 }
