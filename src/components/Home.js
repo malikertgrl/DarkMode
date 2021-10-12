@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Config from "../Config"
 import RenderItem from "./RenderItem";
+import Header from "./Header"
 
 const api = Config.apiURL;
 
@@ -44,7 +45,8 @@ const Home = () => {
 
 
     return (
-        <View style={{ margin: 40 }}>
+        <View style={{ marginHorizontal: 40, }}>
+
 
             <FlatList
                 // numColumns="2"
