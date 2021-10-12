@@ -1,10 +1,10 @@
 export default {
     apiURL: "https://random-data-api.com/api/users/random_user?size=20",
     Styles: {
-        text: {
+        textStyle: {
             margin: 5,
             fontSize: 20,
-            color: "#000",
+            color: "#f5f5",
             fontWeight: "bold"
         },
         imageStyle: {
