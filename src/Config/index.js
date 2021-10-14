@@ -28,6 +28,15 @@ export default {
             backgroundColor: "red",
             justifyContent: "center",
             alignItems: "center",
+        },
+        detailContainerStyle: {
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        imageDetailStyle: {
+            width: "50%",
+            height: "50%"
         }
     }
 }
