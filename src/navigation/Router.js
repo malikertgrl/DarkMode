@@ -10,7 +10,9 @@ import Detail from "../components/Detail";
 
 
 
+
 const Stack = createStackNavigator();
+
 
 function Router() {
     return (
@@ -39,8 +41,7 @@ function Router() {
                     options={{
                         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                         headerStyle: {
-                            backgroundColor: 'red',
-
+                            backgroundColor: 'red'
                         },
                         headerTitleAlign: "center",
                         headerTintColor: '#fff',
