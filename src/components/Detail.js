@@ -1,8 +1,12 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text, Image, useColorScheme } from "react-native";
 import Config from "../Config";
 
-const Detail = ({ route }) => {
+const Detail = ({ route, navigation }) => {
+
+    useEffect(() => {
+        navigation.setOptions({ title: route.params && `${route.params.firstName} ${route.params.secondName}` })
+    })
     return (
         <View style={Config.Styles.detailContainerStyle}>
             <Image

@@ -13,8 +13,41 @@ function Router() {
     return (
         <NavigationContainer>
             <Stack.Navigator >
-                <Stack.Screen name="Home" component={Home} options={{ title: 'Robots' }} />
-                <Stack.Screen name="Detail" component={Detail} />
+                <Stack.Screen
+                    name="Home"
+                    component={Home}
+                    options={{
+                        title: 'ROBOTS',
+                        headerStyle: {
+                            backgroundColor: 'red',
+                            marginVertical: 30
+                        },
+                        headerTitleAlign: "center",
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+
+                        },
+
+                    }} />
+                <Stack.Screen
+                    name="Detail"
+                    component={Detail}
+                    options={{
+                        headerStyle: {
+                            backgroundColor: 'red',
+                            marginVertical: 30
+                        },
+                        headerTitleAlign: "center",
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+
+                        },
+
+                    }}
+
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

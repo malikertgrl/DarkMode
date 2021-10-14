@@ -45,34 +45,45 @@ const Home = ({ navigation }) => {
 
 
     return (
-        <View style={{ marginHorizontal: 40, }}>
+        <View >
 
 
             <FlatList
+                showsVerticalScrollIndicator={false}
                 // numColumns="2"
                 keyExtractor={(item, index) => `${item.uid}_${index}`}
                 data={data}
                 renderItem={({ item }) => {
                     console.log("first_name", item.first_name);
                     return (
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate('Detail', {
-                                    firstName: item.first_name,
-                                    secondName: item.last_name,
-                                    avatar: item.avatar
-                                });
-                            }}
-                        >
-                            <Image
-                                source={{ uri: item.avatar }}
-                                style={Config.Styles.imageStyle}
 
-                            />
-                            <Text style={Config.Styles.textStyle}>
-                                {item.first_name} {item.last_name}
-                            </Text>
-                        </TouchableOpacity>
+
+                        <View style={{ marginVertical: 30 }}>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    navigation.navigate('Detail', {
+                                        firstName: item.first_name,
+                                        secondName: item.last_name,
+                                        avatar: item.avatar
+                                    });
+                                }}
+                            >
+                                <View style={{ flexDirection: "row", justifyContent: "space-around", alignItems: "center" }}>
+
+                                    <Image
+                                        source={{ uri: item.avatar }}
+                                        style={Config.Styles.imageStyle}
+
+                                    />
+                                    <Text style={Config.Styles.textStyle}>
+                                        {item.first_name} {item.last_name}
+                                    </Text>
+
+                                </View>
+
+                            </TouchableOpacity>
+                        </View>
+
                     )
                 }
                 }

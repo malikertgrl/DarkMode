@@ -2,10 +2,10 @@ import React from "react"
 import { View, Text } from "react-native"
 import Config from "../Config"
 
-const Header = ({ title }) => {
+const Header = () => {
     return (
         <View style={Config.Styles.headerViewStyle} >
-            <Text style={Config.Styles.headerTextStyle}> {title}</Text>
+            <Text style={Config.Styles.headerTextStyle}> Robots </Text>
         </View>
     )
 }

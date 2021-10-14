@@ -8,8 +8,8 @@ export default {
             fontWeight: "bold"
         },
         imageStyle: {
-            width: 100,
-            height: 100
+            width: 150,
+            height: 150
         },
         Container: {
             flex: 1,
@@ -35,8 +35,8 @@ export default {
             alignItems: "center"
         },
         imageDetailStyle: {
-            width: "50%",
-            height: "50%"
+            width: "80%",
+            height: "80%"
         }
     }
 }
