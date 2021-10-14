@@ -8,12 +8,12 @@ import {
     TouchableOpacity
 } from "react-native";
 import Config from "../Config"
-import RenderItem from "./RenderItem";
+// import RenderItem from "./RenderItem";
 import Header from "./Header"
 
 const api = Config.apiURL;
 
-const Home = () => {
+const Home = ({ navigation }) => {
     const [data, setData] = useState([]);
     // const [loading, setLoading] = useState(false);
 
@@ -52,7 +52,30 @@ const Home = () => {
                 // numColumns="2"
                 keyExtractor={(item, index) => `${item.uid}_${index}`}
                 data={data}
-                renderItem={RenderItem}
+                renderItem={({ item }) => {
+                    console.log("first_name", item.first_name);
+                    return (
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate('Detail', {
+                                    firstName: item.first_name,
+                                    secondName: item.last_name,
+                                    avatar: item.avatar
+                                });
+                            }}
+                        >
+                            <Image
+                                source={{ uri: item.avatar }}
+                                style={Config.Styles.imageStyle}
+
+                            />
+                            <Text style={Config.Styles.textStyle}>
+                                {item.first_name} {item.last_name}
+                            </Text>
+                        </TouchableOpacity>
+                    )
+                }
+                }
                 ListEmptyComponent={ListEmptyComponent}
             />
         </View>

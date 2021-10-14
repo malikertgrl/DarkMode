@@ -2,19 +2,19 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import Config from "../Config"
 
-const RenderItem = (props) => {
-    console.log("first_name", props.item.first_name);
+const RenderItem = ({ item, navigation }) => {
+    console.log("first_name", item.first_name);
     return (
         <TouchableOpacity
-            onPress={() => console.log("tıklandı")}
+            onPress={() => navigation.navigate("Detail")}
         >
             <Image
-                source={{ uri: props.item.avatar }}
+                source={{ uri: item.avatar }}
                 style={Config.Styles.imageStyle}
 
             />
             <Text style={Config.Styles.textStyle}>
-                {props.item.first_name} {props.item.last_name}
+                {item.first_name} {item.last_name}
             </Text>
         </TouchableOpacity>
     )
