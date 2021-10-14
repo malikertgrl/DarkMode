@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {
+    createStackNavigator,
+    CardStyleInterpolators,
+} from '@react-navigation/stack';
 import Home from "../components/Home";
 import Detail from "../components/Detail";
 
 
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 function Router() {
     return (
@@ -20,7 +23,7 @@ function Router() {
                         title: 'ROBOTS',
                         headerStyle: {
                             backgroundColor: 'red',
-                            marginVertical: 30
+
                         },
                         headerTitleAlign: "center",
                         headerTintColor: '#fff',
@@ -28,15 +31,16 @@ function Router() {
                             fontWeight: 'bold',
 
                         },
-
-                    }} />
+                    }}
+                />
                 <Stack.Screen
                     name="Detail"
                     component={Detail}
                     options={{
+                        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                         headerStyle: {
                             backgroundColor: 'red',
-                            marginVertical: 30
+
                         },
                         headerTitleAlign: "center",
                         headerTintColor: '#fff',
