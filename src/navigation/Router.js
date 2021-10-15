@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {
     createStackNavigator,
@@ -24,7 +24,7 @@ function Settings() {
 
 
 
-function HomeDetail() {
+function HomeDetail({ navigation }) {
     return (
 
         <Stack.Navigator>
@@ -34,6 +34,13 @@ function HomeDetail() {
                 component={Home}
                 options={{
                     title: "Robots",
+                    headerLeft: () => (
+                        <Button
+                            onPress={() => navigation.openDrawer()}
+                            title="Info"
+                            color="#fff"
+                        />
+                    ),
                     headerStyle: {
                         backgroundColor: 'red'
                     },
