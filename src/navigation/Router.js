@@ -7,54 +7,73 @@ import {
 } from '@react-navigation/stack';
 import Home from "../components/Home";
 import Detail from "../components/Detail";
-
-
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
+
+function Settings() {
+    return (
+        <View style={{ justifyContent: "center" }}>
+            <Text style={{ fontSize: 30, fontWeight: "bold" }}>sdasdaf</Text>
+        </View>
+    )
+
+}
+
+
+
+function HomeDetail() {
+    return (
+
+        <Stack.Navigator>
+
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    title: "Robots",
+                    headerStyle: {
+                        backgroundColor: 'red'
+                    },
+                    headerTitleAlign: "center",
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
+                }}
+
+            />
+            <Stack.Screen
+                name="Detail"
+                component={Detail}
+                options={{
+                    cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+                    headerStyle: {
+                        backgroundColor: 'red'
+                    },
+                    headerTitleAlign: "center",
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
+                }}
+            />
+
+        </Stack.Navigator>
+
+    );
+}
 
 function Router() {
     return (
         <NavigationContainer>
-            <Stack.Navigator >
-                <Stack.Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                        title: 'ROBOTS',
-                        headerStyle: {
-                            backgroundColor: 'red',
-
-                        },
-                        headerTitleAlign: "center",
-                        headerTintColor: '#fff',
-                        headerTitleStyle: {
-                            fontWeight: 'bold',
-
-                        },
-                    }}
-                />
-                <Stack.Screen
-                    name="Detail"
-                    component={Detail}
-                    options={{
-                        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-                        headerStyle: {
-                            backgroundColor: 'red'
-                        },
-                        headerTitleAlign: "center",
-                        headerTintColor: '#fff',
-                        headerTitleStyle: {
-                            fontWeight: 'bold',
-
-                        },
-
-                    }}
-
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
+            <Drawer.Navigator>
+                <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false }} />
+                <Drawer.Screen name="Settings" component={Settings} />
+            </Drawer.Navigator>
+        </NavigationContainer >
     );
 }
 
