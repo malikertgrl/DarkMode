@@ -37,6 +37,9 @@ export default {
         imageDetailStyle: {
             width: "80%",
             height: "80%"
+        },
+        iconStyle: {
+            margin: 10
         }
     }
 }

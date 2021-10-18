@@ -8,6 +8,8 @@ import {
 import Home from "../components/Home";
 import Detail from "../components/Detail";
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Config from '../Config';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -35,11 +37,15 @@ function HomeDetail({ navigation }) {
                 options={{
                     title: "Robots",
                     headerLeft: () => (
-                        <Button
-                            onPress={() => navigation.openDrawer()}
-                            title="Info"
-                            color="#fff"
-                        />
+                        <View style={Config.Styles.iconStyle}>
+                            <FontAwesome5 name={'bars'} size={20} color="#fff" onPress={() => navigation.openDrawer()} />
+
+                        </View>
+                        // <Button
+                        //     onPress={() => navigation.openDrawer()}
+                        //     title="Info"
+                        //     color="#fff"
+                        // />
                     ),
                     headerStyle: {
                         backgroundColor: 'red'
