@@ -40,6 +40,14 @@ export default {
         },
         iconStyle: {
             margin: 15
+        },
+        Card: {
+            borderWidth: 1,
+            borderColor: "gray",
+            elevation: 2,
+            flexDirection: "row",
+            justifyContent: "space-around",
+            alignItems: "center"
         }
     }
 }

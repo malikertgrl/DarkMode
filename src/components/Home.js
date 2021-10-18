@@ -58,7 +58,7 @@ const Home = ({ navigation }) => {
                     return (
 
 
-                        <View style={{ marginVertical: 30 }}>
+                        <View >
                             <TouchableOpacity
                                 onPress={() => {
                                     navigation.navigate('Detail', {
@@ -68,7 +68,7 @@ const Home = ({ navigation }) => {
                                     });
                                 }}
                             >
-                                <View style={{ flexDirection: "row", justifyContent: "space-around", alignItems: "center" }}>
+                                <View style={Config.Styles.Card}>
 
                                     <Image
                                         source={{ uri: item.avatar }}
