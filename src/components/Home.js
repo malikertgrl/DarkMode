@@ -8,8 +8,8 @@ import {
     TouchableOpacity
 } from "react-native";
 import Config from "../Config"
-// import RenderItem from "./RenderItem";
 import Header from "./Header"
+import RenderItem from "./RenderItem";
 
 const api = Config.apiURL;
 
@@ -42,6 +42,7 @@ const Home = ({ navigation }) => {
         )
 
     }
+    const keyExtractor = (item, index) => `${item.uid}_${index}`
 
 
     return (
@@ -49,43 +50,16 @@ const Home = ({ navigation }) => {
 
 
             <FlatList
-                showsVerticalScrollIndicator={false}
                 // numColumns="2"
-                keyExtractor={(item, index) => `${item.uid}_${index}`}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={keyExtractor}
                 data={data}
                 renderItem={({ item }) => {
-                    // console.log("first_name", item.first_name);
                     return (
-
-
-                        <View >
-                            <TouchableOpacity
-                                onPress={() => {
-                                    navigation.navigate('Detail', {
-                                        firstName: item.first_name,
-                                        secondName: item.last_name,
-                                        avatar: item.avatar
-                                    });
-                                }}
-                            >
-                                <View style={Config.Styles.Card}>
-
-                                    <Image
-                                        source={{ uri: item.avatar }}
-                                        style={Config.Styles.imageStyle}
-
-                                    />
-                                    <Text style={Config.Styles.textStyle}>
-                                        {item.first_name} {item.last_name}
-                                    </Text>
-
-                                </View>
-
-                            </TouchableOpacity>
-                        </View>
-
+                        <RenderItem item={item} navigation={navigation} />
                     )
                 }
+
                 }
                 ListEmptyComponent={ListEmptyComponent}
             />
