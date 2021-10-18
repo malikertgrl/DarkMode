@@ -38,14 +38,14 @@ function HomeDetail({ navigation }) {
                     title: "Robots",
                     headerLeft: () => (
                         <View style={Config.Styles.iconStyle}>
-                            <FontAwesome5 name={'bars'} size={20} color="#fff" onPress={() => navigation.openDrawer()} />
+                            <FontAwesome5
+                                onPress={() => navigation.openDrawer()}
+                                name='bars'
+                                size={20}
+                                color="#fff"
+                            />
 
                         </View>
-                        // <Button
-                        //     onPress={() => navigation.openDrawer()}
-                        //     title="Info"
-                        //     color="#fff"
-                        // />
                     ),
                     headerStyle: {
                         backgroundColor: 'red'

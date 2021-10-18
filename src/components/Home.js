@@ -54,7 +54,7 @@ const Home = ({ navigation }) => {
                 keyExtractor={(item, index) => `${item.uid}_${index}`}
                 data={data}
                 renderItem={({ item }) => {
-                    console.log("first_name", item.first_name);
+                    // console.log("first_name", item.first_name);
                     return (
 
 

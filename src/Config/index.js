@@ -39,7 +39,7 @@ export default {
             height: "80%"
         },
         iconStyle: {
-            margin: 10
+            margin: 15
         }
     }
 }
