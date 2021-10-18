@@ -47,20 +47,12 @@ const Home = ({ navigation }) => {
 
     return (
         <View >
-
-
             <FlatList
                 // numColumns="2"
                 showsVerticalScrollIndicator={false}
                 keyExtractor={keyExtractor}
                 data={data}
-                renderItem={({ item }) => {
-                    return (
-                        <RenderItem item={item} navigation={navigation} />
-                    )
-                }
-
-                }
+                renderItem={({ item }) => <RenderItem item={item} navigation={navigation} />}
                 ListEmptyComponent={ListEmptyComponent}
             />
         </View>
