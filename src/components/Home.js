@@ -28,7 +28,7 @@ const Home = ({ navigation }) => {
 
 
     useEffect(() => {
-
+        console.log("useEffect çalıştı");
         fetchData();
 
     }, [])

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { View, Text, Switch } from "react-native";
-import { ThemeContext, ThemeProvider, useThemeContext } from "../utils/Theme/ThemeContext";
+import { ThemeContext } from "../utils/Theme/ThemeContext";
 
 
 const Context = () => {

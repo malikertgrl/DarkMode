@@ -38,9 +38,9 @@ const ThemeProvider = ({ children }) => {
     )
 }
 
-const useThemeContext = () => {
-    const context = useContext(ThemeContext)
-    return context;
-}
+// const useThemeContext = () => {
+//     const context = useContext(ThemeContext)
+//     return context;
+// }
 
-export { ThemeContext, ThemeProvider, useThemeContext }
+export { ThemeContext, ThemeProvider };
