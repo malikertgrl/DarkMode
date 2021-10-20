@@ -7,6 +7,8 @@ import {
 } from '@react-navigation/stack';
 import Home from "../components/Home";
 import Detail from "../components/Detail";
+import Context from "../components/Context";
+
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Config from '../Config';
@@ -14,15 +16,6 @@ import Config from '../Config';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-
-function Settings() {
-    return (
-        <View style={{ justifyContent: "center" }}>
-            <Text style={{ fontSize: 30, fontWeight: "bold" }}>sdasdaf</Text>
-        </View>
-    )
-
-}
 
 
 
@@ -82,9 +75,9 @@ function HomeDetail({ navigation }) {
 function Router() {
     return (
         <NavigationContainer>
-            <Drawer.Navigator>
+            <Drawer.Navigator initialRouteName="Context">
                 <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false }} />
-                <Drawer.Screen name="Settings" component={Settings} />
+                <Drawer.Screen name="Context" component={Context} />
             </Drawer.Navigator>
         </NavigationContainer >
     );
