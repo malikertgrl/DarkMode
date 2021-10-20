@@ -51,6 +51,12 @@ export default {
         },
         contextCard: {
             flex: 1,
+        },
+        inputStyle: {
+            borderBottomWidth: 1,
+            marginHorizontal: 50,
+            marginVertical: 10,
+            paddingHorizontal: 60,
         }
     }
 }

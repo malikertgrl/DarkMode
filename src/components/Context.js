@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { useState } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { View, Text, Switch, Button } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Config from "../Config";
@@ -11,14 +10,34 @@ import CustomButton from "./CustomButton";
 const Context = () => {
     const { isDarkMode, theme, toggleTheme } = useContext(ThemeContext);
     console.log({ isDarkMode, theme, toggleTheme });
+
+    const inputRef = useRef(null);
+
+    const focus = () => {
+        if (inputRef?.current) {
+            inputRef?.current.focus();
+        }
+    }
+
+    // useEffect(() => {
+    //     focus();
+    // }, [])
+
     return (
         <View style={[Config.Styles.contextCard, { backgroundColor: theme.backgroundColor }]}>
             <View>
                 <TextInput
-                    placeholder="adınızı giriniz"
-                    style={{ borderBottomWidth: 1, margin: 20, paddingHorizontal: 60, }}
+                    ref={inputRef}
+                    placeholder="adınızı giriniz:"
+                    style={[Config.Styles.inputStyle, { color: theme.color, borderBottomColor: theme.borderBottomColor }]}
                 />
-                <CustomButton title="Tıkla" />
+                <TextInput
+
+                    ref={inputRef}
+                    placeholder="soyadınızı giriniz"
+                    style={[Config.Styles.inputStyle, { marginBottom: 20, color: theme.color, borderBottomColor: theme.borderBottomColor }]}
+                />
+                <CustomButton title="Tıkla" onPress={() => focus()} />
             </View>
 
             <View style={{ flex: 2, flexDirection: "row", alignItems: "flex-end", justifyContent: "center", alignSelf: "center", margin: 20 }}>

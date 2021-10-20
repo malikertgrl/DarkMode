@@ -9,11 +9,14 @@ import React,
 const Themes = {
     lightTheme: {
         backgroundColor: "#ffff",
-        color: "#000"
+        color: "#000",
+        borderBottomColor: "#000"
     },
     darkTheme: {
         backgroundColor: "#000",
-        color: "#ffff"
+        color: "#ffff",
+        borderBottomColor: "#fff"
+
     }
 }
 
