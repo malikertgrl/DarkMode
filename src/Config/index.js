@@ -48,6 +48,9 @@ export default {
             flexDirection: "row",
             justifyContent: "space-around",
             alignItems: "center"
+        },
+        contextCard: {
+            flex: 1,
         }
     }
 }
