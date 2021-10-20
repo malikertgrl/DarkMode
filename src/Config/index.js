@@ -57,6 +57,14 @@ export default {
             marginHorizontal: 50,
             marginVertical: 10,
             paddingHorizontal: 60,
+        },
+        switchStyle: {
+            flex: 2,
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "flex-end",
+            alignSelf: "center",
+            margin: 20
         }
     }
 }

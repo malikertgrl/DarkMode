@@ -40,8 +40,8 @@ const Context = () => {
                 <CustomButton title="Tıkla" onPress={() => focus()} />
             </View>
 
-            <View style={{ flex: 2, flexDirection: "row", alignItems: "flex-end", justifyContent: "center", alignSelf: "center", margin: 20 }}>
-                <Text style={{ color: theme.color }}>Dark Mode: </Text>
+            <View style={Config.Styles.switchStyle}>
+                <Text style={{ color: theme.color, marginVertical: 3 }}>Dark Mode: </Text>
                 <Switch
                     style={{ marginHorizontal: 5 }}
                     value={isDarkMode}
