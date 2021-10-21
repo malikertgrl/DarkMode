@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import { View, Text } from "react-native";
 import { ThemeContext } from "../utils/Theme/ThemeContext";
 
@@ -13,9 +13,9 @@ import { ThemeContext } from "../utils/Theme/ThemeContext";
 // }
 
 const CustomText = ({ text, customStyle }) => {
-    const { theme } = useContext(ThemeContext);
 
-    console.log("customText", { theme });
+    const { theme } = useContext(ThemeContext);
+    console.log("customText calıştı text değişti");
 
     return (
         <View>
@@ -30,4 +30,9 @@ const CustomText = ({ text, customStyle }) => {
 //     }
 // }
 
-export default CustomText;
+export default memo(CustomText, (prevProps, nextProps) => {
+    if (prevProps.text !== nextProps.text) {
+        return false
+    }
+    return true
+});

@@ -25,7 +25,7 @@ const Styles = {
         padding: 10,
         marginHorizontal: "30%",
         borderWidth: 2,
-        borderRadius: 15,
+        borderRadius: 10,
         borderColor: "#64b5f6",
         elevation: 3
     },

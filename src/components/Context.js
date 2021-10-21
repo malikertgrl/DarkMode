@@ -13,6 +13,8 @@ const Context = () => {
 
     const { isDarkMode, theme, toggleTheme } = useContext(ThemeContext);
     const [inputValue, setInputValue] = useState("")
+    const [inputLastName, setInputLasName] = useState("")
+
     // console.log({ isDarkMode, theme, toggleTheme });
 
     const inputRef = useRef(null);
@@ -34,7 +36,7 @@ const Context = () => {
     return (
         <View style={[Config.Styles.contextCard, { backgroundColor: theme.backgroundColor }]}>
             <CustomText
-                text="bu sayfada usecontext kullanıyoruz."
+                text="bu sayfada usecontext kullansssyoruz."
             />
             <View>
                 <TextInput
@@ -45,6 +47,8 @@ const Context = () => {
                     style={[Config.Styles.inputStyle, { color: theme.color, borderBottomColor: theme.borderBottomColor }]}
                 />
                 <TextInput
+                    value={inputLastName}
+                    onChangeText={val => setInputLasName(val)}
                     ref={inputRef}
                     placeholder="soyadınızı giriniz"
                     style={[Config.Styles.inputStyle, { color: theme.color, borderBottomColor: theme.borderBottomColor }]}
