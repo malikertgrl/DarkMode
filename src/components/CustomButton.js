@@ -18,6 +18,7 @@ const CustomButton = ({ title, onPress }) => {
 
 const Styles = {
     customButtonStyle: {
+        marginVertical: 20,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#fff",
