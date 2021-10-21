@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import Config from "../Config"
 
 const RenderItem = ({ item, navigation }) => {
-    // console.log("first_name", item.first_name);
+    // console.("first_name", item.first_name);
     return (
 
 

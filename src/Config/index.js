@@ -1,5 +1,6 @@
 export default {
-    apiURL: "https://random-data-api.com/api/users/random_user?size=20",
+    apiURL: "https://random-data-api.com/api/users/random_user",
+
     Styles: {
         textStyle: {
             margin: 5,
