@@ -32,7 +32,6 @@ const Context = () => {
                     style={[Config.Styles.inputStyle, { color: theme.color, borderBottomColor: theme.borderBottomColor }]}
                 />
                 <TextInput
-
                     ref={inputRef}
                     placeholder="soyadınızı giriniz"
                     style={[Config.Styles.inputStyle, { marginBottom: 20, color: theme.color, borderBottomColor: theme.borderBottomColor }]}

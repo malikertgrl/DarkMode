@@ -76,8 +76,19 @@ function Router() {
     return (
         <NavigationContainer>
             <Drawer.Navigator initialRouteName="Context">
-                <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false }} />
-                <Drawer.Screen name="Context" component={Context} />
+                <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false, title: "FlatList" }} />
+                <Drawer.Screen name="Context" component={Context}
+                    options={{
+                        title: "ChangeTheme",
+                        headerStyle: {
+                            backgroundColor: 'red'
+                        },
+                        headerTitleAlign: "center",
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
+                    }} />
             </Drawer.Navigator>
         </NavigationContainer >
     );
