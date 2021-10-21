@@ -4,12 +4,14 @@ import { TextInput } from "react-native-gesture-handler";
 import Config from "../Config";
 import { ThemeContext } from "../utils/Theme/ThemeContext";
 import CustomButton from "./CustomButton";
+import CustomText, { Welcome } from "./CustomText";
 
 
 
 const Context = () => {
+
     const { isDarkMode, theme, toggleTheme } = useContext(ThemeContext);
-    console.log({ isDarkMode, theme, toggleTheme });
+    // console.log({ isDarkMode, theme, toggleTheme });
 
     const inputRef = useRef(null);
 
@@ -25,6 +27,9 @@ const Context = () => {
 
     return (
         <View style={[Config.Styles.contextCard, { backgroundColor: theme.backgroundColor }]}>
+            <CustomText
+                text="bu sayfada usecontext kullanıyoruz."
+            />
             <View>
                 <TextInput
                     ref={inputRef}
@@ -40,7 +45,10 @@ const Context = () => {
             </View>
 
             <View style={Config.Styles.switchStyle}>
-                <Text style={{ color: theme.color, marginVertical: 3 }}>Dark Mode: </Text>
+                <CustomText
+                    customStyle={{ marginVertical: 5 }}
+                    text="dark mode:"
+                />
                 <Switch
                     style={{ marginHorizontal: 5 }}
                     value={isDarkMode}

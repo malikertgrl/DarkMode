@@ -64,7 +64,7 @@ export default {
             justifyContent: "center",
             alignItems: "flex-end",
             alignSelf: "center",
-            margin: 20
+            margin: 20,
         }
     }
 }
