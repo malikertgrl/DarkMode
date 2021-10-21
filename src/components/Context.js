@@ -49,7 +49,11 @@ const Context = () => {
                     placeholder="soyadınızı giriniz"
                     style={[Config.Styles.inputStyle, { color: theme.color, borderBottomColor: theme.borderBottomColor }]}
                 />
-                <CustomButton title="Tıkla" onPress={() => textLength()} />
+                <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                    <CustomButton title="Focus" onPress={() => focus()} />
+                    <CustomButton title="Count" onPress={() => textLength()} />
+                </View>
+
             </View>
 
             <View style={Config.Styles.switchStyle}>
