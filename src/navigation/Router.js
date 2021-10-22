@@ -8,6 +8,7 @@ import {
 import Home from "../components/Home";
 import Detail from "../components/Detail";
 import Context from "../components/Context";
+import Async_storage from '../components/Async_storage';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -75,7 +76,7 @@ function HomeDetail({ navigation }) {
 function Router() {
     return (
         <NavigationContainer>
-            <Drawer.Navigator initialRouteName="HomeDetail">
+            <Drawer.Navigator initialRouteName="Async_storage">
                 <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false, title: "FlatList" }} />
                 <Drawer.Screen name="Context" component={Context}
                     options={{
@@ -89,6 +90,7 @@ function Router() {
                             fontWeight: 'bold',
                         },
                     }} />
+                <Drawer.Screen name="Async_storage" component={Async_storage} options={{ title: "AsyncStorage" }} />
             </Drawer.Navigator>
         </NavigationContainer >
     );

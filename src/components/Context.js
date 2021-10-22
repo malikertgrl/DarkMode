@@ -5,7 +5,7 @@ import { TextInput } from "react-native-gesture-handler";
 import Config from "../Config";
 import { ThemeContext } from "../utils/Theme/ThemeContext";
 import CustomButton from "./CustomButton";
-import CustomText, { Welcome } from "./CustomText";
+import CustomText from "./CustomText";
 
 
 
