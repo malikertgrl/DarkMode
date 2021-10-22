@@ -5,6 +5,7 @@ import React,
     useState,
     useMemo
 } from "react";
+import { useCallback } from "react";
 
 const Themes = {
     lightTheme: {
@@ -26,9 +27,19 @@ const ThemeProvider = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleTheme = () => {
+        console.log("toogleTheme");
         setIsDarkMode(prevState => !prevState)
     }
+
+    // const theme = useCallback(() => {
+    //     console.log("useCAllback");
+    //     return (isDarkMode ? Themes.darkTheme : Themes.lightTheme)
+    // },
+    //     [isDarkMode],
+    // )
+
     const theme = useMemo(() => {
+        console.log("tema değişti");
         return (isDarkMode ? Themes.darkTheme : Themes.lightTheme)
     }, [isDarkMode])
 

@@ -14,7 +14,7 @@ import { ThemeContext } from "../utils/Theme/ThemeContext";
 
 const CustomText = ({ text, customStyle }) => {
 
-    const { theme } = useContext(ThemeContext);
+    const { theme, isDarkMode } = useContext(ThemeContext);
     console.log("customText calıştı text değişti");
 
     return (
@@ -31,7 +31,7 @@ const CustomText = ({ text, customStyle }) => {
 // }
 
 export default memo(CustomText, (prevProps, nextProps) => {
-    if (prevProps.text !== nextProps.text) {
+    if (prevProps.text !== nextProps.text || prevProps.isDarkMode !== nextProps.isDarkMode) {
         return false
     }
     return true
