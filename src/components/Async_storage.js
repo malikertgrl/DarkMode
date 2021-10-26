@@ -32,6 +32,17 @@ const Async_storage = () => {
         }
     }
 
+    const removeItem = async () => {
+
+        try {
+            const deletValue = await AsyncStorage.getItem(key)
+            console.log("deletValue", deletValue);
+            setValue(null)
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
     // const mergeItem = async () => {
     //     try {
     //         const mergeITem = await AsyncStorage.mergeItem(key, inputValue)
@@ -73,7 +84,7 @@ const Async_storage = () => {
             <View >
                 <CustomButton title="setItem" onPress={() => setItem()} />
                 <CustomButton title="getItem" onPress={() => getItem()} />
-                <CustomButton title="mergeItem" onPress={() => mergeItem()} />
+                <CustomButton title="removeItem" onPress={() => removeItem()} />
                 <CustomButton title="clearAll" onPress={() => clearAll()} />
 
 
