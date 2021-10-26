@@ -25,35 +25,55 @@ const Home = ({ navigation }) => {
     // const [loading, setLoading] = useState(false);
 
     const fetchData = async () => {
-
+        console.log("fetchDAta");
         const response = await fetch(api);
         const json = await response.json();
-        // fetch(`${api}?size=${pageSize}`)
-        // fetch(api)
-        //     .then((response) => response.json())
-        //     .then((json) => setData(json))
-        //     .catch((e) => console.log("fetch hatası", e))
+
+
         try {
             await AsyncStorage.setItem(uid, JSON.stringify(json))
-            console.log("set edildi");
-        } catch (error) {
-            console.log("setITem", error);
+            console.log("setITem.");
+
+
+        } catch (e) {
+            console.log("addItemToLists hata", e);
         }
 
     }
+
+    // const setItem = async (api) => {
+    //     try {
+    //         await AsyncStorage.setItem(uid, JSON.stringify(api))
+    //         console.log("set edildi");
+    //     } catch (error) {
+    //         console.log("setITem", error);
+    //     }
+    // }
+
     const getItem = async () => {
-        const robots = await AsyncStorage.getItem(uid)
-        const parse = JSON.parse(robots)
-        setData(parse);
+        try {
+            const get = await AsyncStorage.getItem(uid)
+            const parse = JSON.parse(get)
+            if (parse !== null) {
+                setData(parse)
+                console.log("getdata parse edildi");
+
+            } else {
+                console.log("else hata");
+            }
+
+
+        } catch (e) {
+            console.log("getData", e);
+        }
     }
+
 
     // burada apimizin istek attığı data arttığında render olacak onun dışında render olmayacak.
     useEffect(() => {
-        getItem()
+        getItem();
 
-
-
-    }, [pageSize])
+    }, [])
 
 
     const ListEmptyComponent = () => {
@@ -79,7 +99,7 @@ const Home = ({ navigation }) => {
             />
             <View>
                 <CustomButton
-                    title="Robot Ekle"
+                    title="Set Item"
                     onPress={() => fetchData()}
                 />
             </View>
