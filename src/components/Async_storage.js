@@ -6,6 +6,11 @@ import CustomText from "./CustomText";
 
 
 const key = "Async Storage"
+const obj = {
+    name: "malik",
+    surname: "ertugrul",
+    age: 23
+}
 const Async_storage = () => {
 
     const [inputValue, setInputValue] = useState();
@@ -25,8 +30,8 @@ const Async_storage = () => {
 
         try {
             const currentValue = await AsyncStorage.getItem(key)
-            console.log("getITem", currentValue);
-            setValue(currentValue)
+            currentValue && console.log("stringimizi get ettik", currentValue) || setValue(currentValue)
+            // setValue(currentValue)
         } catch (error) {
             console.log("error", error);
         }
