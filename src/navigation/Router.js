@@ -23,7 +23,10 @@ const Drawer = createDrawerNavigator();
 function HomeDetail({ navigation }) {
     return (
 
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            gestureDirection: 'horizontal',
+            gestureEnabled: true,
+        }}>
 
             <Stack.Screen
                 name="Home"
@@ -55,6 +58,7 @@ function HomeDetail({ navigation }) {
             <Stack.Screen
                 name="Detail"
                 component={Detail}
+
                 options={{
                     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                     headerStyle: {
