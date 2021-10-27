@@ -76,7 +76,7 @@ function HomeDetail({ navigation }) {
 function Router() {
     return (
         <NavigationContainer>
-            <Drawer.Navigator initialRouteName="Async_storage">
+            <Drawer.Navigator initialRouteName="HomeDetail">
                 <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false, title: "FlatList" }} />
                 <Drawer.Screen name="Context" component={Context}
                     options={{

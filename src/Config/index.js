@@ -1,5 +1,5 @@
 export default {
-    apiURL: "https://random-data-api.com/api/users/random_user",
+    apiURL: "https://random-data-api.com/api/users/random_user?size=9",
     uniqKey: "malik ertuğrul",
 
     Styles: {
