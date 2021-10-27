@@ -5,9 +5,8 @@ const Navigation6x = () => {
     return (
         <View>
             <Text>sadasd</Text>
-            <Button title="modal" onPress={() => { }} />
         </View>
     )
 }
 
-export default Navigation6x;
+export { Navigation6x };
