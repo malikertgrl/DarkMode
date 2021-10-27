@@ -16,22 +16,31 @@ const Mytab = () => {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarStyle: { backgroundColor: 'tomato' },
-                headerShown: false,
-                tabBarActiveTintColor: "blue",
+                // tabBarStyle: { backgroundColor: 'tomato' },
+                // headerShown: false,
+                tabBarActiveTintColor: "black",
                 tabBarInactiveTintColor: "gray"
             }}>
             <Tab.Screen
                 name="Navigation6x"
                 component={Navigation6x}
                 options={{
+                    headerStyle: {
+                        backgroundColor: 'blue'
+                    },
+                    headerTitleAlign: "center",
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
+                    title: "home",
                     tabBarLabel: "Home",
                     tabBarBadge: 2,
-                    tabBarIcon: ({ color, size }) => (
+                    tabBarIcon: ({ focused, color, size }) => (
 
                         <FontAwesome5 name="home"
                             size={size}
-                            color={color} />
+                            color={focused ? "blue" : null} />
                     )
                 }}
             />
@@ -39,12 +48,19 @@ const Mytab = () => {
                 name="Page1"
                 component={Page1}
                 options={{
+                    headerStyle: {
+                        backgroundColor: 'red'
+                    },
+                    headerTitleAlign: "center",
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
                     tabBarIcon: ({ color, size, focused }) => (
 
                         <FontAwesome5 name="ambulance"
                             size={size}
-                            color={color} />
-                        // color={focused ? "red" : null} />
+                            color={focused ? "red" : null} />
 
 
                     )
@@ -53,13 +69,20 @@ const Mytab = () => {
                 name="Page2"
                 component={Page2}
                 options={{
+                    headerStyle: {
+                        backgroundColor: 'green'
+                    },
+                    headerTitleAlign: "center",
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                    },
                     tabBarLabel: "angellist",
-                    tabBarIcon: ({ color, size }) => (
+                    tabBarIcon: ({ focused, color, size }) => (
 
                         <FontAwesome5 name="angellist"
                             size={size}
-                            color={color} />
-
+                            color={focused ? "green" : null} />
 
                     )
                 }} />
