@@ -1,13 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 
-const CustomButton = ({ title, onPress }) => {
+const CustomButton = ({ title, onClick }) => {
 
 
 
     return (
         <View >
-            <TouchableOpacity onPress={onPress} >
+            <TouchableOpacity onPress={onClick} >
                 <View style={Styles.customButtonStyle}>
                     <Text style={Styles.textStyle}>{title}</Text>
                 </View>
