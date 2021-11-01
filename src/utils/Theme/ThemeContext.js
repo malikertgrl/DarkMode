@@ -25,6 +25,13 @@ const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
+
+    const toggleLogin = () => {
+        return (
+            setIsLogin(prevState => !prevState)
+        )
+    }
 
     const toggleTheme = () => {
         console.log("toogleTheme");
@@ -43,7 +50,7 @@ const ThemeProvider = ({ children }) => {
         return (isDarkMode ? Themes.darkTheme : Themes.lightTheme)
     }, [isDarkMode])
 
-    const value = { toggleTheme, theme, isDarkMode }
+    const value = { toggleTheme, theme, isDarkMode, isLogin, toggleLogin }
 
     return (
         <ThemeContext.Provider value={value} >
