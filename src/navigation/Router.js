@@ -9,6 +9,8 @@ import {
     Mytab
 } from "../tabNavigator"
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 
 
 const Drawer = createDrawerNavigator();
@@ -21,12 +23,30 @@ const Drawer = createDrawerNavigator();
 function Router() {
     return (
         <NavigationContainer>
-            <Drawer.Navigator initialRouteName="LoginScreen">
+            <Drawer.Navigator initialRouteName="LoginScreen"
+                screenOptions={{
+                    drawerActiveBackgroundColor: "#ff6659",
+                    drawerActiveTintColor: "#fff",
+                    overlayColor: "#c0b3c2",
+                    drawerHideStatusBarOnOpen: "false"
+                }}>
 
-                <Drawer.Screen name="HomeDetail" component={HomeDetail} options={{ headerShown: false, title: "FlatList" }} />
+                <Drawer.Screen
+                    name="HomeDetail"
+                    component={HomeDetail}
+                    options={{
+                        headerShown: false,
+                        title: "FlatList",
+                        drawerIcon: ({ focused }) => (
+
+                            <FontAwesome5 name="home"
+                                size={focused ? 25 : 20}
+                                color={focused ? "#fff" : "gray"} />
+                        )
+                    }} />
                 <Drawer.Group screenOptions={{
                     headerStyle: {
-                        backgroundColor: 'red'
+                        backgroundColor: '#ef5350'
                     },
                     headerTitleAlign: "center",
                     headerTintColor: '#fff',
@@ -34,14 +54,44 @@ function Router() {
                         fontWeight: 'bold',
                     },
                 }}>
-                    <Drawer.Screen name="Context" component={Context}
+                    <Drawer.Screen
+                        name="Context"
+                        component={Context}
                         options={{
                             title: "ChangeTheme",
+                            drawerIcon: ({ focused }) => (
+
+                                <FontAwesome5 name="react"
+                                    size={focused ? 25 : 20}
+                                    color={focused ? "#fff" : "gray"} />
+                            )
+
+
 
                         }} />
-                    <Drawer.Screen name="Async_storage" component={Async_storage} options={{ title: "AsyncStorage" }} />
+                    <Drawer.Screen name="Async_storage" component={Async_storage}
+                        options={{
+                            title: "AsyncStorage",
+                            drawerIcon: ({ focused }) => (
+
+                                <FontAwesome5 name="tablet"
+                                    size={focused ? 25 : 20}
+                                    color={focused ? "#fff" : "gray"} />
+                            )
+
+
+                        }} />
                 </Drawer.Group>
-                <Drawer.Screen name="Mytab" component={Mytab} options={{ headerShown: false, }} />
+                <Drawer.Screen name="Mytab" component={Mytab} options={{
+                    headerShown: false,
+                    drawerIcon: ({ focused }) => (
+
+                        <FontAwesome5 name="magic"
+                            size={focused ? 25 : 20}
+                            color={focused ? "#fff" : "gray"} />
+                    )
+
+                }} />
 
 
             </Drawer.Navigator>

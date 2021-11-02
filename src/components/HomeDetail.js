@@ -39,7 +39,7 @@ const HomeDetail = ({ navigation }) => {
                         </View>
                     ),
                     headerStyle: {
-                        backgroundColor: 'red'
+                        backgroundColor: '#ef5350'
                     },
                     headerTitleAlign: "center",
                     headerTintColor: '#fff',
@@ -56,7 +56,7 @@ const HomeDetail = ({ navigation }) => {
                 options={{
                     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
                     headerStyle: {
-                        backgroundColor: 'red'
+                        backgroundColor: '#ef5350'
                     },
                     headerTitleAlign: "center",
                     headerTintColor: '#fff',
